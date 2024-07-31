@@ -88,8 +88,8 @@ Jacobin Matrix:
 $$
 J(r, \phi, z) =
 \begin{pmatrix}
-    cos\phi & -rsin\phi & 0 \\\\
-    sin\phi & rcos\phi & 0 \\\\
+    cos\phi & -rsin\phi & 0 \\
+    sin\phi & rcos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -99,19 +99,63 @@ Hence find expressions for $\hat{r}$ and $\hat{\phi}$ in terms of $\hat{x}$ and 
 $$
 \begin{pmatrix}
     \hat{r} \\
-    \hat{\phi}
+    \hat{\phi} \\
+    \hat{z}
 \end{pmatrix} = J
 \begin{pmatrix}
     \hat{x} \\
-    \hat{y}
+    \hat{y} \\
+    \hat{z}
+\end{pmatrix}
+$$
+
+Since $\hat{r}$ and $\hat{\phi}$ are unit vectors, let $r = 1$
+
+$$
+T(\phi) =
+\begin{pmatrix}
+    cos\phi & -sin\phi & 0 \\
+    sin\phi & cos\phi & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+$$
+
+---
+
+Or, considering
+
+$$
+\hat{r} = cos\phi \hat{x} + sin\phi \hat{y} \\
+\hat{\phi} = -sin\phi \hat{x} + cos\phi \hat{y} \\
+v = v_r\hat{r} + v_{\phi}\hat{\phi} + v_z\hat{z}
+$$
+
+$$
+v_x = v·\hat{x} = v_r cos\phi - v_{\phi} sin\phi \\
+v_y = v·\hat{y} = v_r sin\phi + v_{\phi} cos\phi \\
+v_z = v·\hat{z} = v_z
+$$
+
+In order to make
+
+$$
+\begin{pmatrix}
+    v_x \\
+    v_y \\
+    v_z
+\end{pmatrix} = T(\phi)
+\begin{pmatrix}
+    v_r \\
+    v_{\phi} \\
+    v_z
 \end{pmatrix}
 $$
 
 $$
 T(\phi) =
 \begin{pmatrix}
-    cos\phi & -sin\phi & 0 \\\\
-    sin\phi & cos\phi & 0 \\\\
+    cos\phi & -sin\phi & 0 \\
+    sin\phi & cos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -122,8 +166,8 @@ We've got that
 $$
 T(\phi) =
 \begin{pmatrix}
-    cos\phi & -sin\phi & 0 \\\\
-    sin\phi & cos\phi & 0 \\\\
+    cos\phi & -sin\phi & 0 \\
+    sin\phi & cos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -133,8 +177,8 @@ Hence,
 $$
 (T^*(\phi))^T =
 \begin{pmatrix}
-    cos\phi & -sin\phi & 0 \\\\
-    sin\phi & cos\phi & 0 \\\\
+    cos\phi & -sin\phi & 0 \\
+    sin\phi & cos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -142,8 +186,8 @@ $$
 $$
 T^*(\phi) =
 \begin{pmatrix}
-    cos\phi & sin\phi & 0 \\\\
-    -sin\phi & cos\phi & 0 \\\\
+    cos\phi & sin\phi & 0 \\
+    -sin\phi & cos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -163,8 +207,8 @@ Hence,
 $$
 T^{-1}(\phi) =
 \begin{pmatrix}
-    cos\phi & sin\phi & 0 \\\\
-    -sin\phi & cos\phi & 0 \\\\
+    cos\phi & sin\phi & 0 \\
+    -sin\phi & cos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -172,8 +216,8 @@ $$
 (c)
 
 $$
-r = \sqrt{x^2 + y^2} \\\\
-cos(\phi) = \frac{x}{\sqrt{x^2 + y^2}} \\\\
+r = \sqrt{x^2 + y^2} \\
+cos(\phi) = \frac{x}{\sqrt{x^2 + y^2}} \\
 sin(\phi) = \frac{y}{\sqrt{x^2 + y^2}}
 $$
 
@@ -182,14 +226,14 @@ $$
 $$
 T^{-1}(\phi) =
 \begin{pmatrix}
-    cos\phi & sin\phi & 0 \\\\
-    -sin\phi & cos\phi & 0 \\\\
+    cos\phi & sin\phi & 0 \\
+    -sin\phi & cos\phi & 0 \\
     0 & 0 & 1
 \end{pmatrix} \\\\
 S(P) =
 \begin{pmatrix}
-    \frac{x}{\sqrt{x^2 + y^2}} & \frac{y}{\sqrt{x^2 + y^2}} & 0 \\\\
-    -\frac{y}{\sqrt{x^2 + y^2}} & \frac{x}{\sqrt{x^2 + y^2}} & 0 \\\\
+    \frac{x}{\sqrt{x^2 + y^2}} & \frac{y}{\sqrt{x^2 + y^2}} & 0 \\
+    -\frac{y}{\sqrt{x^2 + y^2}} & \frac{x}{\sqrt{x^2 + y^2}} & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -201,8 +245,8 @@ In Question 2.1(d), we've got
 $$
 S(P) =
 \begin{pmatrix}
-    \frac{x}{\sqrt{x^2 + y^2}} & \frac{y}{\sqrt{x^2 + y^2}} & 0 \\\\
-    -\frac{y}{\sqrt{x^2 + y^2}} & \frac{x}{\sqrt{x^2 + y^2}} & 0 \\\\
+    \frac{x}{\sqrt{x^2 + y^2}} & \frac{y}{\sqrt{x^2 + y^2}} & 0 \\
+    -\frac{y}{\sqrt{x^2 + y^2}} & \frac{x}{\sqrt{x^2 + y^2}} & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -212,8 +256,8 @@ $$
 $$
 S(P) =
 \begin{pmatrix}
-    0 & -1 & 0 \\\\
-    1 & 0 & 0 \\\\
+    0 & -1 & 0 \\
+    1 & 0 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -223,8 +267,8 @@ $$
 $$
 S(P) =
 \begin{pmatrix}
-    1 & 0 & 0 \\\\
-    0 & 1 & 0 \\\\
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -234,8 +278,8 @@ $$
 $$
 S(P) =
 \begin{pmatrix}
-    -1 & 0 & 0 \\\\
-    0 & -1 & 0 \\\\
+    -1 & 0 & 0 \\
+    0 & -1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -245,8 +289,8 @@ $$
 $$
 S(P) =
 \begin{pmatrix}
-    \frac{\sqrt2}{2} & -\frac{\sqrt2}{2} & 0 \\\\
-    \frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\\\
+    \frac{\sqrt2}{2} & -\frac{\sqrt2}{2} & 0 \\
+    \frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -256,8 +300,8 @@ $$
 $$
 S(P) =
 \begin{pmatrix}
-    0 & 0 & 0 \\\\
-    0 & 0 & 0 \\\\
+    0 & 0 & 0 \\
+    0 & 0 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 $$
@@ -318,8 +362,8 @@ For certain plane, origin can always be the point with the highest electrostatic
 A circle.
 
 $$
-V=\frac{1}{\sqrt{1+x^2+y^2}} \\\\
-\sqrt{1+x^2+y^2} = \frac{1}{V} \\\\
+V=\frac{1}{\sqrt{1+x^2+y^2}} \\
+\sqrt{1+x^2+y^2} = \frac{1}{V} \\
 x^2 + y^2 = \frac{1}{V^2} - 1
 $$
 
