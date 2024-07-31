@@ -90,15 +90,13 @@ $$
     cos\phi & -sin\phi & 0 \\\\
     sin\phi & cos\phi & 0 \\\\
     0 & 0 & 1
-\end{pmatrix}
-\\\\
+\end{pmatrix} \\\\
 T^*(\phi) =
 \begin{pmatrix}
     cos\phi & sin\phi & 0 \\\\
     -sin\phi & cos\phi & 0 \\\\
     0 & 0 & 1
-\end{pmatrix}
-\\\\
+\end{pmatrix} \\\\
 det[T(\phi)] = 1
 $$
 
