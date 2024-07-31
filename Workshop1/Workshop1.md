@@ -72,6 +72,7 @@ $$
 
 (b)
 We've got that
+
 $$
 T(\phi) =
 \begin{pmatrix}
@@ -82,6 +83,7 @@ T(\phi) =
 $$
 
 Hence,
+
 $$
 (T^*(\phi))^T =
 \begin{pmatrix}
@@ -105,7 +107,9 @@ Based on Cramer's rule,
 $$
 T^{-1}(\phi) = \frac{1}{det}T^*(\phi)
 $$
+
 Hence,
+
 $$
 T^{-1}(\phi) =
 \begin{pmatrix}
@@ -116,6 +120,7 @@ T^{-1}(\phi) =
 $$
 
 (c)
+
 $$
 r = \sqrt{x^2 + y^2} \\\\
 cos(\phi) = \frac{x}{\sqrt{x^2 + y^2}} \\\\
@@ -123,6 +128,7 @@ sin(\phi) = \frac{y}{\sqrt{x^2 + y^2}}
 $$
 
 (d)
+
 $$
 T^{-1}(\phi) =
 \begin{pmatrix}
@@ -152,6 +158,7 @@ S(P) =
 $$
 
 (a) P = (0, -1, 0)
+
 $$
 S(P) =
 \begin{pmatrix}
@@ -162,6 +169,7 @@ S(P) =
 $$
 
 (b) P = (1, 0, 0)
+
 $$
 S(P) =
 \begin{pmatrix}
@@ -172,6 +180,7 @@ S(P) =
 $$
 
 (c) P = (-1, 0, 0)
+
 $$
 S(P) =
 \begin{pmatrix}
@@ -182,6 +191,7 @@ S(P) =
 $$
 
 (d) P = (1, -1, 0)
+
 $$
 S(P) =
 \begin{pmatrix}
@@ -192,6 +202,7 @@ S(P) =
 $$
 
 (e) P = (0, 0, 0)
+
 $$
 S(P) =
 \begin{pmatrix}
@@ -255,6 +266,7 @@ For certain plane, origin can always be the point with the highest electrostatic
 
 (c)
 A circle.
+
 $$
 V=\frac{1}{\sqrt{1+x^2+y^2}} \\\\
 \sqrt{1+x^2+y^2} = \frac{1}{V} \\\\
