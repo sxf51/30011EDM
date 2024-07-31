@@ -4,6 +4,20 @@
 
 ## 1.1
 
+For rectangular coordinates and cylindrical coodinates,
+
+$$
+x = rcos\phi
+$$
+
+$$
+y = rsin\phi
+$$
+
+$$
+z = z
+$$
+
 (a)
 
 $$(1, 0, 0)$$
@@ -26,6 +40,22 @@ $$(-1, 0, 0)$$
 
 ## 1.2
 
+For spherical coordinates and rectangular coordinates,
+
+$$
+x = rcos\phi sin\theta
+$$
+
+$$
+y = rsin\phi sin\theta
+$$
+
+$$
+z = rcos\theta
+$$
+
+It can be noted that, $r$ is the modulus of a vector $\sqrt{x^2+y^2+z^2}$, $\phi$ is the angle with the x-axis in x-y plane, $\theta$ is the angle with the z-axis.
+
 (a)
 
 $$(1, 0, \pi/2)$$
@@ -38,6 +68,8 @@ $$(1, \pi/2, \pi/2)$$
 
 $$(1, 0, 0)$$
 
+- $\phi$ can be any real number here.
+
 (d)
 
 $$(\sqrt2, \pi/2, \pi/4)$$
@@ -46,10 +78,12 @@ $$(\sqrt2, \pi/2, \pi/4)$$
 
 $$(0, 0, 0)$$
 
+- $r = 0$, $\phi$ and $\theta$ can be any real number here.
+
 ## 2.1
 
 (a) Let $$x=rcos\phi, y=rsin\phi, z=z$$
-Jacobin:
+Jacobin Matrix:
 
 $$
 \begin{vmatrix}
@@ -90,13 +124,19 @@ $$
     cos\phi & -sin\phi & 0 \\\\
     sin\phi & cos\phi & 0 \\\\
     0 & 0 & 1
-\end{pmatrix} \\\\
+\end{pmatrix}
+$$
+
+$$
 T^*(\phi) =
 \begin{pmatrix}
     cos\phi & sin\phi & 0 \\\\
     -sin\phi & cos\phi & 0 \\\\
     0 & 0 & 1
-\end{pmatrix} \\\\
+\end{pmatrix}
+$$
+
+$$
 det[T(\phi)] = 1
 $$
 
