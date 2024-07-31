@@ -86,14 +86,26 @@ $$(0, 0, 0)$$
 Jacobin Matrix:
 
 $$
-\begin{vmatrix}
+J(r, \phi, z) =
+\begin{pmatrix}
     cos\phi & -rsin\phi & 0 \\\\
     sin\phi & rcos\phi & 0 \\\\
     0 & 0 & 1
-\end{vmatrix}
+\end{pmatrix}
 $$
 
-Let r = 1,
+Hence find expressions for $\hat{r}$ and $\hat{\phi}$ in terms of $\hat{x}$ and $\hat{y}$.
+
+$$
+\begin{pmatrix}
+    \hat{r} \\
+    \hat{\phi}
+\end{pmatrix} = J
+\begin{pmatrix}
+    \hat{x} \\
+    \hat{y}
+\end{pmatrix}
+$$
 
 $$
 T(\phi) =
