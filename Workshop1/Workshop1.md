@@ -259,12 +259,22 @@ S(P) =
     1 & 0 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
+S^{-1}(P) =
+\begin{pmatrix}
+    0 & 1 & 0 \\
+    -1 & 0 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+$$
+
+$$
+S^{-1}(P)P=(-1, 0, 0)^T
 $$
 
 (b) P = (1, 0, 0)
 
 $$
-S(P) =
+S^{-1}(P) = S(P) =
 \begin{pmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
@@ -272,15 +282,23 @@ S(P) =
 \end{pmatrix}
 $$
 
+$$
+S^{-1}(P)P=(1, 0, 0)^T
+$$
+
 (c) P = (-1, 0, 0)
 
 $$
-S(P) =
+S^{-1}(P) = S(P) =
 \begin{pmatrix}
     -1 & 0 & 0 \\
     0 & -1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
+$$
+
+$$
+S^{-1}(P)P=(1, 0, 0)^T
 $$
 
 (d) P = (1, -1, 0)
@@ -292,9 +310,28 @@ S(P) =
     \frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
     0 & 0 & 1
 \end{pmatrix}
+S^{-1}(P) =
+\begin{pmatrix}
+    \frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
+    -\frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+$$
+
+$$
+S^{-1}(P)P=(0, -\sqrt2, 0)^T
 $$
 
 (e) P = (0, 0, 0)
+
+Since,
+
+$$
+\lim_{x \to 0, y = 0}{\frac{x}{\sqrt{x^2 + y^2}}} = 1 \\
+\lim_{x = 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}} = 1
+$$
+
+We get $S(P)$ and $S^{-1}(P)$:
 
 $$
 S(P) =
@@ -303,6 +340,16 @@ S(P) =
     -1 & 1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
+S^{-1}(P) =
+\begin{pmatrix}
+    1/2 & -1/2 & 0 \\
+    1/2 & 1/2 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+$$
+
+$$
+S^{-1}(P)P=(0, 0, 0)^T
 $$
 
 ## 3.1
