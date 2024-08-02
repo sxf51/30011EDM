@@ -94,21 +94,20 @@ J(r, \phi, z) =
 \end{pmatrix}
 $$
 
-Hence find expressions for $\hat{r}$ and $\hat{\phi}$ in terms of $\hat{x}$ and $\hat{y}$.
-
 $$
 \begin{pmatrix}
-    \hat{r} \\
-    \hat{\phi} \\
-    \hat{z}
+    d{x} \\
+    d{y} \\
+    d{z}
 \end{pmatrix} = J
 \begin{pmatrix}
-    \hat{x} \\
-    \hat{y} \\
-    \hat{z}
+    d{r} \\
+    d{\phi} \\
+    d{z}
 \end{pmatrix}
 $$
 
+Hence find expressions for $\hat{r}$ and $\hat{\phi}$ in terms of $\hat{x}$ and $\hat{y}$.
 Since $\hat{r}$ and $\hat{\phi}$ are unit vectors, let $r = 1$
 
 $$
