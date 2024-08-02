@@ -1,6 +1,7 @@
 # ELEN30011 EDM Task
 
 - Xiufu SUN 1372750
+- Wenyang SUN 1354302
 
 ## 1.1
 
@@ -54,7 +55,10 @@ $$
 z = rcos\theta
 $$
 
-It can be noted that, $r$ is the modulus of a vector $\sqrt{x^2+y^2+z^2}$, $\phi$ is the angle with the x-axis in x-y plane, $\theta$ is the angle with the z-axis.
+It can be noted that, $r$ is the modulus of a vector $r = \sqrt{x^2+y^2+z^2}$;
+$\phi$ is the angle with the x-axis in x-y plane $\phi = arctan(y/x)$;
+$\theta$ is the angle with the z-axis $\theta = arctan(\sqrt{x^2 + y^2}/z)$.
+In order to make the answer unique, we assume $r \geq 0, \phi \in [0, 2\pi), \theta \in [0, \pi]$
 
 (a)
 
@@ -171,6 +175,27 @@ T(\phi) =
 \end{pmatrix}
 $$
 
+The (i, j)-cofactor is $C_{i,j} = (-1)^{i+j}M_{i,j}$, where $M_{i,j}$ is the (i, j)-minor.
+
+$$
+C_{11} = (-1)^{1+1}M_{11} =
+\begin{vmatrix}
+    cos\phi & 0 \\
+    0 & 1
+\end{vmatrix}
+= cos\phi
+$$
+
+Similarly,
+
+$$
+\begin{matrix}
+    & C_{12} = -sin\phi & C_{13} = 0 \\
+    C_{21} = sin\phi & C_{22} = cos\phi & C_{23} = 0 \\
+    C_{31} = 0 & C_{32} = 0 & C_{33} = 1
+\end{matrix}
+$$
+
 Hence,
 
 $$
@@ -181,6 +206,8 @@ $$
     0 & 0 & 1
 \end{pmatrix}
 $$
+
+The adjugate matrix of T is:
 
 $$
 T^*(\phi) =
@@ -221,6 +248,8 @@ sin(\phi) = \frac{y}{\sqrt{x^2 + y^2}}
 $$
 
 (d)
+
+According to the result of part c, substitute $cos\phi$ and $sin\phi$:
 
 $$
 T^{-1}(\phi) =
