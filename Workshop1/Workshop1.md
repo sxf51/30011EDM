@@ -21,21 +21,31 @@ $$
 
 (a)
 
+$x = 1\times cos(0) = 1$, $y = 1\times sin(0) = 0$, $z = 0$
+
 $$(1, 0, 0)$$
 
 (b)
+
+$x = 1\times cos(\pi) = -1$, $y = 1\times sin(\pi) = 0$, $z = 0$
 
 $$(-1, 0, 0)$$
 
 (c)
 
+$x = 1\times cos(-\pi / 2) = 0$, $y = 1\times sin(-\pi / 2) = -1$, $z = 3$
+
 $$(0, -1, 3)$$
 
 (d)
 
+$x = 0\times cos(-\pi) = 0$, $y = 0\times sin(-\pi) = 0$, $z = -2$
+
 $$(0, 0, -2)$$
 
 (e)
+
+$x = -1\times cos(0) = -1$, $y = -1\times sin(0) = 0$, $z = 0$
 
 $$(-1, 0, 0)$$
 
@@ -62,13 +72,25 @@ In order to make the answer unique, we assume $r \geq 0, \phi \in [0, 2\pi), \th
 
 (a)
 
+$r = \sqrt{1^2+0^2+0^2} = 1$,
+$\phi = arctan(0/1) = 0$,
+$\theta = arctan(\sqrt{1^2 + 0^2}/0) = \pi/2$
+
 $$(1, 0, \pi/2)$$
 
 (b)
 
+$r = \sqrt{0^2+1^2+0^2} = 1$,
+$\phi = arctan(1/0) = \pi/2$,
+$\theta = arctan(\sqrt{0^2 + 1^2}/0) = \pi/2$
+
 $$(1, \pi/2, \pi/2)$$
 
 (c)
+
+$r = \sqrt{0^2+0^2+1^2} = 1$,
+$\phi = arctan(0/0) = undefined$,
+$\theta = arctan(\sqrt{0^2 + 0^2}/1) = 0$
 
 $$(1, 0, 0)$$
 
@@ -76,9 +98,17 @@ $$(1, 0, 0)$$
 
 (d)
 
+$r = \sqrt{0^2+1^2+1^2} = \sqrt2$,
+$\phi = arctan(1/0) = \pi/2$,
+$\theta = arctan(\sqrt{0^2 + 1^2}/1) = \pi/4$
+
 $$(\sqrt2, \pi/2, \pi/4)$$
 
 (e)
+
+$r = \sqrt{0^2+0^2+0^2} = 0$,
+$\phi = arctan(0/0) = undefined$,
+$\theta = arctan(\sqrt{0^2 + 0^2}/0) = undefined$
 
 $$(0, 0, 0)$$
 
@@ -495,6 +525,8 @@ hold on;
 
 ![W1_3_2b](./img/W1_3_2b.png)
 
+- More "sparse": xx and yy are $41\times 41$ matrix (interval 0.1), while xxnew and yynew are $17\times 17$ matrix (interval 0.25).
+
 (c)
 
 ```Matlab
@@ -608,4 +640,4 @@ $$
 \nabla \times E = 0
 $$
 
-It is a special case of Maxwell's Equations, in this case $E = grad(V)$.
+It is a special case of Maxwell's Equations, in this case $E = -grad(V)$.
