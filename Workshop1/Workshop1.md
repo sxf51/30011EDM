@@ -406,6 +406,8 @@ ans =
     41    41
 ```
 
+$xx$ and $yy$ are both $41 \times 41$ matrix.
+
 (b)
 
 ```Matlab
@@ -439,7 +441,7 @@ A circle.
 $$
 V=\frac{1}{\sqrt{1+x^2+y^2}} \\
 \sqrt{1+x^2+y^2} = \frac{1}{V} \\
-x^2 + y^2 = \frac{1}{V^2} - 1
+r = \sqrt{x^2 + y^2} = \sqrt{\frac{1}{V^2} - 1}
 $$
 
 Its radius is $\sqrt{\frac{1}{V^2} - 1}$
@@ -508,3 +510,102 @@ Perpendicular to each other.
 ## 3.3
 
 (a)
+
+The contour V is a curve, its tangents is $T(s)= \dot{x}(s) \hat{x} + \dot{y}(s) \hat{y}$
+
+Based on the chain rule, which is:
+
+$$
+\frac{d}{ds} = \frac{d}{dx} \frac{dx}{ds}
+$$
+
+Since $\nabla = \frac{\partial}{\partial{x}}i + \frac{\partial}{\partial{y}}j$, the gradient of V is
+
+$$
+\nabla{V} = \frac{\partial{V}}{\partial{x}}i + \frac{\partial{V}}{\partial{y}}j
+$$
+
+$$
+\nabla{V} \cdot T(s) = \nabla{V} \cdot \frac{d}{ds}(x(s), y(s)) = \frac{d}{ds}V(x(s), y(s))
+$$
+
+Since V is constant along the contour, its derivative is zero.
+
+$$
+\nabla{V} \cdot T(s) = 0
+$$
+
+In Task 3.2, we got $E(x,y) = −\nabla{V} (x,y)$
+
+Hence, we get the fomular 11.
+
+According to the electric field (8) and (9),
+
+$$
+E(x(s), y(s)) \approx \frac{x(s)\hat{x} + y(s)\hat{y}}{(1 + x^2(s) + y^2(s))^{\frac{3}{2}}}
+$$
+
+In formula (12),
+
+$$
+T(s) = \hat{T}(x(s), y(s)) \approx \frac{y(s)\hat{x} - x(s)\hat{y}}{\sqrt{1 + x^2(s) + y^2(s)}}
+$$
+
+$$
+\overrightarrow{E} \cdot \overrightarrow{T} = \frac{x(s)y(s) - y(s)x(s)}{(1 + x^2(s) + y^2(s))^{2}} = 0
+$$
+
+The dot product of vectors is 0 means these vectors are perpendicular.
+
+For $\forall (x(s),y(s)) \in \mathbb{R}^2, s\in \mathbb{R}$, $\overrightarrow{E} \cdot \overrightarrow{T} = 0$, which means $T(s)$ must be everywhere perpendicular to $E(x(s),y(s))$.
+
+(b)
+
+```Matlab
+close all
+clear
+clc
+
+x = -2:.1:2;
+y = -2:.1:2;
+[xx, yy] = meshgrid(x, y);
+
+zz = 1./sqrt(1 + xx.^2 + yy.^2);
+
+figure(4);
+contour(xx, yy,zz, 10);
+xlabel('x');
+ylabel('y');
+grid on;
+
+exx = xx./(1 + xx.^2 + yy.^2).^(3/2);
+eyy = yy./(1 + xx.^2 + yy.^2).^(3/2);
+
+xnew = -2:.25:2;
+ynew = xnew;
+[xxnew, yynew] = meshgrid(xnew, ynew);
+exxnew = yynew./(1 + xxnew.^2 + yynew.^2).^(3/2);
+eyynew = -xxnew./(1 + xxnew.^2 + yynew.^2).^(3/2);
+
+figure(4);
+hold on;
+quiver(xxnew, yynew, exxnew, eyynew, "Color","#C0C0C0");
+hold off;
+```
+
+![W1_3_3b](./img/W1_3_3b.png)
+
+(c)
+
+We've already found that the electric field $E(x,y) = −\nabla{V} (x,y)$, this figure shows:
+
+- $\hat{T}$ is the tangent vector of V, and it is perpendicular to the electric field $E$.
+- Also, the electric field $E$ is perpendicular to the contours $V$.
+
+This means the electric field is not divergence, its curl will be 0.
+
+$$
+\nabla \times E = 0
+$$
+
+It is a special case of Maxwell's Equations, in this case $E = grad(V)$.
