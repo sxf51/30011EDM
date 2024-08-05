@@ -68,3 +68,143 @@ $$
 $$
 grad f = \nabla{f} = \frac{\partial{f}}{\partial{x}}{\bf{\hat{x}}} + \frac{\partial{f}}{\partial{y}}{\bf{\hat{y}}} + \frac{\partial{f}}{\partial{z}}{\bf{\hat{z}}} = \frac{2x}{x^2 + y^2 + z^2}{\bf{\hat{x}}} + \frac{2y}{x^2 + y^2 + z^2}{\bf{\hat{y}}} + \frac{2z}{x^2 + y^2 + z^2}{\bf{\hat{z}}}
 $$
+
+## 1.4
+
+(a)
+
+$$
+div {\bf{F}} = {\bf{\nabla \cdot F}} = \frac{\partial{F_x}}{\partial{x}} + \frac{\partial{F_y}}{\partial{y}} + \frac{\partial{F_z}}{\partial{z}} = 0
+$$
+
+$$
+curl {\bf{F}} = {\bf{\nabla \times F}} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    F_x & F_y & F_z
+\end{vmatrix} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    0 & 0 & 0
+\end{vmatrix} = 0{\bf{\hat{x}}} + 0{\bf{\hat{y}}} + 0{\bf{\hat{z}}}
+$$
+
+(b)
+
+$$
+div {\bf{F}} = {\bf{\nabla \cdot F}} = \frac{\partial{F_x}}{\partial{x}} + \frac{\partial{F_y}}{\partial{y}} + \frac{\partial{F_z}}{\partial{z}} = -1 + 1 = 0
+$$
+
+$$
+curl {\bf{F}} = {\bf{\nabla \times F}} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    F_x & F_y & F_z
+\end{vmatrix} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    -x & 0 & z
+\end{vmatrix} = 0{\bf{\hat{x}}} + 0{\bf{\hat{y}}} + 0{\bf{\hat{z}}}
+$$
+
+(c)
+
+$$
+div {\bf{F}} = {\bf{\nabla \cdot F}} = \frac{\partial{F_x}}{\partial{x}} + \frac{\partial{F_y}}{\partial{y}} + \frac{\partial{F_z}}{\partial{z}} = 0
+$$
+
+$$
+curl {\bf{F}} = {\bf{\nabla \times F}} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    F_x & F_y & F_z
+\end{vmatrix} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    z & 0 & -x
+\end{vmatrix} = [1 - (-1)] {\bf{\hat{y}}} = 2 {\bf{\hat{y}}}
+$$
+
+(d)
+
+$$
+div {\bf{F}} = {\bf{\nabla \cdot F}} = \frac{\partial{F_x}}{\partial{x}} + \frac{\partial{F_y}}{\partial{y}} + \frac{\partial{F_z}}{\partial{z}} = \frac{\partial^2{f}}{\partial{x^2}} + \frac{\partial^2{f}}{\partial{y}} + \frac{\partial^2{f}}{\partial{z^2}}
+$$
+
+$$
+\begin{align*}
+curl {\bf{F}} = {\bf{\nabla \times F}} &=
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    F_x & F_y & F_z
+\end{vmatrix} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    \frac{\partial{f}}{\partial{x}} & \frac{\partial{f}}{\partial{y}} & \frac{\partial{f}}{\partial{z}}
+\end{vmatrix} \\
+&= (\frac{\partial^2{f}}{\partial{y}\partial{z}} - \frac{\partial^2{f}}{\partial{z}\partial{y}}){\bf{\hat{x}}} + (\frac{\partial^2{f}}{\partial{z}\partial{x}} - \frac{\partial^2{f}}{\partial{x}\partial{z}}){\bf{\hat{y}}} + (\frac{\partial^2{f}}{\partial{y}\partial{x}} - \frac{\partial^2{f}}{\partial{x}\partial{y}}){\bf{\hat{z}}} \\
+&= 0{\bf{\hat{x}}} + 0{\bf{\hat{y}}} + 0{\bf{\hat{z}}}
+\end{align*}
+$$
+
+## 1.5
+
+```Matlab
+close all
+clear
+clc
+
+x = -3:.75:3;
+y = -2:.75:2;
+z = -3:.75:3;
+
+[X, Y, Z] = meshgrid(x, y, z);
+
+FX = -X;
+FY = 0.*Y;
+FZ = Z;
+
+figure(1);
+quiver3(X,Y,Z,FX,FY,FZ)
+xlabel("x");
+ylabel("y");
+zlabel("z");
+title("Visualization of the field F in 1.4(b)")
+```
+
+![Visualization of the field F in 1.4(b)](./img/W2_1_5b.png)
+
+```Matlab
+close all
+clear
+clc
+
+x = -3:.75:3;
+y = -2:.75:2;
+z = -3:.75:3;
+
+[X, Y, Z] = meshgrid(x, y, z);
+
+FX = Z;
+FY = 0.*Y;
+FZ = -X;
+
+figure(1);
+quiver3(X,Y,Z,FX,FY,FZ)
+xlabel("x");
+ylabel("y");
+zlabel("z");
+title("Visualization of the field F in 1.4(c)")
+```
+
+![Visualization of the field F in 1.4(c)](./img/W2_1_5c.png)
+
+## 2.1
