@@ -443,20 +443,23 @@ S(P)
 \end{pmatrix}
 $$
 
-(e) $(-1, 1, 0)^T$
+(e) $(-\lim_{x \to 0, y \to 0}{\frac{x}{\sqrt{x^2 + y^2}}}, \lim_{x \to 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}}, 0)^T$
 
 When P = (0, 0, 0)
 
-Since,
+We have to compute:
 
 $$
-\lim_{x \to 0, y = 0}{\frac{x}{\sqrt{x^2 + y^2}}} = 1 \\
-\lim_{x = 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}} = 1
+\lim_{x \to 0, y \to 0}{\frac{x}{\sqrt{x^2 + y^2}}} \\
+\lim_{x \to 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}}
 $$
+
+However, we do not know the path of (x, y) approaching to 0.
 
 We get $S(P)$ and the result:
 
 $$
+\begin{align*}
 \begin{pmatrix}
     v_r \\
     v_\phi \\
@@ -467,23 +470,27 @@ S(P)
     v_x \\
     v_y \\
     v_z
-\end{pmatrix} =
+\end{pmatrix} &=
 \begin{pmatrix}
-    1 & 1 & 0 \\
-    -1 & 1 & 0 \\
+    \lim_{x \to 0, y \to 0}{\frac{x}{\sqrt{x^2 + y^2}}} & \lim_{x \to 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}} & 0 \\
+    -\lim_{x \to 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}} & \lim_{x \to 0, y \to 0}{\frac{x}{\sqrt{x^2 + y^2}}} & 0 \\
     0 & 0 & 1
 \end{pmatrix}
 \begin{pmatrix}
     -1 \\
     0 \\
     0
-\end{pmatrix} =
+\end{pmatrix} \\
+&=
 \begin{pmatrix}
-    -1 \\
-    1 \\
+    -\lim_{x \to 0, y \to 0}{\frac{x}{\sqrt{x^2 + y^2}}} \\
+    \lim_{x \to 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}} \\
     0
 \end{pmatrix}
+\end{align*}
 $$
+
+$r$ and $\phi$ are undefined, $z = 0$.
 
 ## 3.1
 
