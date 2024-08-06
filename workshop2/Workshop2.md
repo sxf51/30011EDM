@@ -208,3 +208,78 @@ title("Visualization of the field F in 1.4(c)")
 ![Visualization of the field F in 1.4(c)](./img/W2_1_5c.png)
 
 ## 2.1
+
+### 2.1.1
+
+${\bf{l_1}}$ is a straight line.
+
+$$
+{\bf{l_1}}(s) = (1-s) {\bf{P_1}} + s {\bf{P_2}}
+$$
+
+${\bf{l_2}}$ is circular arc of radius 1.
+
+Let $x = cos(\frac{\pi s}{4})$, $y = sin(\frac{\pi s}{4})$.
+
+$$
+x^2 + y^2 = cos^2(\frac{\pi s}{4}) + sin^2(\frac{\pi s}{4}) = 1
+$$
+
+In cartesian coordinates, $x^2 + y^2 = 1$ is describing a circle with a radius of 1.
+
+Plus, since $s \in [0, 1]$, $x \in [\frac{\sqrt2}{2}, 1]$, $y \in [0, \frac{\sqrt2}{2}]$.
+
+When s increases, ${\bf{l_2}}$ moves from $(1, 0)$ to $(\frac{\sqrt2}{2}, \frac{\sqrt2}{2})$ along this circle, anticlockwise.
+
+### 2.1.2
+
+Fomular (8) shows that,
+
+$$
+{\bf{E}}(x, y, z) = -y {\bf{\hat{x}}} - x {\bf{\hat{y}}}
+$$
+
+For ${\bf{l_1}}$, $x = 1 - s + \frac{s}{\sqrt{2}}$, $y = \frac{s}{\sqrt{2}}$
+
+$$
+{\bf{E}}({\bf{l_1}}(s)) = -\frac{s}{\sqrt{2}} {\bf{\hat{x}}} - (1 - s + \frac{s}{\sqrt{2}}) {\bf{\hat{y}}}
+$$
+
+For ${\bf{l_2}}$, $x = cos(\frac{\pi s}{4})$, $y = sin(\frac{\pi s}{4})$
+
+$$
+{\bf{E}}({\bf{l_2}}(s)) = -sin(\frac{\pi s}{4}) {\bf{\hat{x}}} - cos(\frac{\pi s}{4}) {\bf{\hat{y}}}
+$$
+
+### 2.1.3
+
+```Matlab
+x = 0.6:.2:1.2; y = 0:.2:.8; z = 0:.2:.8;
+[xx,yy,zz] = meshgrid(x,y,z);
+Exx =-yy; Eyy =-xx; Ezz = 0*xx;
+figure(2);
+quiver3(xx,yy,zz,Exx,Eyy,Ezz);
+grid on; hold on;
+xhat = [1;0;0]; yhat = [0;1;0];
+s = 0:.05:1;
+L1 = (1- s).*xhat + s.*(xhat + yhat)/sqrt(2);
+L2 = cos(pi .*s ./4).*xhat + sin(pi .*s ./4).*yhat;
+plot3(L1(1,:),L1(2,:),L1(3,:),'Color',[0 .6 0],'LineWidth',2);
+plot3(L2(1,:),L2(2,:),L2(3,:),'Color',[1 0 0],'LineWidth',2);
+xlabel("x")
+ylabel("y")
+text(1,0,0,"P1","FontSize",24)
+text(1/sqrt(2), 1/sqrt(2), 0, "P2", "FontSize",24)
+```
+
+![2_3_1](./img/W2_2_1.png)
+
+### 2.1.4
+
+$$
+\begin{align*}
+V_{l_1} &= -\int_{l_1} {\bf{E}} \cdot dl_1 \\
+&= -\int_{l_1} {\bf{E}(l_1(s))} \cdot \frac{d{\bf{l_1}}}{ds}(s) ds \\
+&= 
+\end{align*}
+$$

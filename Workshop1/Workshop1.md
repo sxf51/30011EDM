@@ -309,87 +309,141 @@ S(P) =
 \end{pmatrix}
 $$
 
-(a) $(-1, 0, 0)$
+In this task, we assume $v_x=−1, v_y=0, v_z=0$.
+
+(a) $(0, -1, 0)^T$
 
 When P = (0, -1, 0)
 
 $$
-S(P) =
+\begin{pmatrix}
+    v_r \\
+    v_\phi \\
+    v_z
+\end{pmatrix} =
+S(P)
+\begin{pmatrix}
+    v_x \\
+    v_y \\
+    v_z
+\end{pmatrix} =
 \begin{pmatrix}
     0 & -1 & 0 \\
     1 & 0 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
-S^{-1}(P) =
 \begin{pmatrix}
-    0 & 1 & 0 \\
-    -1 & 0 & 0 \\
-    0 & 0 & 1
+    -1 \\
+    0 \\
+    0
+\end{pmatrix} =
+\begin{pmatrix}
+    0 \\
+    -1 \\
+    0
 \end{pmatrix}
 $$
 
-$$
-S^{-1}(P)P^T=(-1, 0, 0)^T
-$$
-
-(b) $(1, 0, 0)$
+(b) $(-1, 0, 0)^T$
 
 When P = (1, 0, 0)
 
 $$
-S^{-1}(P) = S(P) =
+\begin{pmatrix}
+    v_r \\
+    v_\phi \\
+    v_z
+\end{pmatrix} =
+S(P)
+\begin{pmatrix}
+    v_x \\
+    v_y \\
+    v_z
+\end{pmatrix} =
 \begin{pmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
+\begin{pmatrix}
+    -1 \\
+    0 \\
+    0
+\end{pmatrix} =
+\begin{pmatrix}
+    -1 \\
+    0 \\
+    0
+\end{pmatrix}
 $$
 
-$$
-S^{-1}(P)P^T=(1, 0, 0)^T
-$$
-
-(c) $(1, 0, 0)$
+(c) $(1, 0, 0)^T$
 
 When P = (-1, 0, 0)
 
 $$
-S^{-1}(P) = S(P) =
+\begin{pmatrix}
+    v_r \\
+    v_\phi \\
+    v_z
+\end{pmatrix} =
+S(P)
+\begin{pmatrix}
+    v_x \\
+    v_y \\
+    v_z
+\end{pmatrix} =
 \begin{pmatrix}
     -1 & 0 & 0 \\
     0 & -1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
+\begin{pmatrix}
+    -1 \\
+    0 \\
+    0
+\end{pmatrix} =
+\begin{pmatrix}
+    1 \\
+    0 \\
+    0
+\end{pmatrix}
 $$
 
-$$
-S^{-1}(P)P^T=(1, 0, 0)^T
-$$
-
-(d) $(0, -\sqrt2, 0)$
+(d) $(-\frac{\sqrt2}{2}, -\frac{\sqrt2}{2}, 0)^T$
 
 When P = (1, -1, 0)
 
 $$
-S(P) =
+\begin{pmatrix}
+    v_r \\
+    v_\phi \\
+    v_z
+\end{pmatrix} =
+S(P)
+\begin{pmatrix}
+    v_x \\
+    v_y \\
+    v_z
+\end{pmatrix} =
 \begin{pmatrix}
     \frac{\sqrt2}{2} & -\frac{\sqrt2}{2} & 0 \\
     \frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
     0 & 0 & 1
 \end{pmatrix}
-S^{-1}(P) =
 \begin{pmatrix}
-    \frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
-    -\frac{\sqrt2}{2} & \frac{\sqrt2}{2} & 0 \\
-    0 & 0 & 1
+    -1 \\
+    0 \\
+    0
+\end{pmatrix} =
+\begin{pmatrix}
+    -\frac{\sqrt2}{2} \\
+    -\frac{\sqrt2}{2} \\
+    0
 \end{pmatrix}
 $$
 
-$$
-S^{-1}(P)P^T=(0, -\sqrt2, 0)^T
-$$
-
-(e) $(0, 0, 0)$
+(e) $(-1, 1, 0)^T$
 
 When P = (0, 0, 0)
 
@@ -400,25 +454,35 @@ $$
 \lim_{x = 0, y \to 0}{\frac{y}{\sqrt{x^2 + y^2}}} = 1
 $$
 
-We get $S(P)$ and $S^{-1}(P)$:
+We get $S(P)$ and the result:
 
 $$
-S(P) =
+\begin{pmatrix}
+    v_r \\
+    v_\phi \\
+    v_z
+\end{pmatrix} =
+S(P)
+\begin{pmatrix}
+    v_x \\
+    v_y \\
+    v_z
+\end{pmatrix} =
 \begin{pmatrix}
     1 & 1 & 0 \\
     -1 & 1 & 0 \\
     0 & 0 & 1
 \end{pmatrix}
-S^{-1}(P) =
 \begin{pmatrix}
-    1/2 & -1/2 & 0 \\
-    1/2 & 1/2 & 0 \\
-    0 & 0 & 1
+    -1 \\
+    0 \\
+    0
+\end{pmatrix} =
+\begin{pmatrix}
+    -1 \\
+    1 \\
+    0
 \end{pmatrix}
-$$
-
-$$
-S^{-1}(P)P^T=(0, 0, 0)^T
 $$
 
 ## 3.1
