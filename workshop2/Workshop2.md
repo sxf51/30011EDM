@@ -422,6 +422,16 @@ $$
 
 ## 2.3
 
+### 2.3.1
+
+$l_1, l_2, l_3, l_4$ forms a square, anticlockwise.
+
+![W2_3](./img/W2_3_1.png)
+
+### 2.3.2
+
+
+
 ## 2.4
 
 ![W2_4](./img/W2_4.png)
