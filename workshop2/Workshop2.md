@@ -339,3 +339,89 @@ U({\bf{P_2}}) - U({\bf{P_1}}) = (1/2 + c) - (0 + c) = \frac{1}{2}
 $$
 
 ## 2.2
+
+### 2.2.1
+
+$$
+curl {\bf{H}} = {\bf{\nabla \times H}} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    H_x & H_y & H_z
+\end{vmatrix} =
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    \frac{\partial}{\partial{x}} & \frac{\partial}{\partial{y}} & \frac{\partial}{\partial{z}} \\
+    -z & x & 0
+\end{vmatrix} = -{\bf{\hat{y}}} + {\bf{\hat{z}}}
+$$
+
+### 2.2.2
+
+In part 2.2.1, we've got $curl {\bf{H}} = -{\bf{\hat{y}}} + {\bf{\hat{z}}}$. Since the x component of ${\bf{H}}$ is 0, the flux of $A_{left}$ and $A_{left}$ equals 0.
+
+$$
+\int curl {\bf{H}} \cdot d{\bf{A_{left}}} = \int (-{\bf{\hat{y}}} + {\bf{\hat{z}}}) \cdot d{A_{left}} {\bf{\hat{x}}} = 0 \\
+\int curl {\bf{H}} \cdot d{\bf{A_{right}}} = \int (-{\bf{\hat{y}}} + {\bf{\hat{z}}}) \cdot d{A_{right}} {\bf{\hat{x}}} = 0
+$$
+
+### 2.2.3
+
+The surface of $A_{angle}$ is $z - y = 0$
+
+Choose $x = 2s$, $y = 2t$, $s,t \in [0, 1]$
+
+$\Rightarrow z = y = 2t$
+
+$$
+\begin{align*}
+{\bf{l_{angle}}}(s,t) = 2s{\bf{\hat{x}}} + 2t{\bf{\hat{y}}} + 2t{\bf{\hat{z}}} && s,t \in [0,1]
+\end{align*}
+$$
+
+$$
+\begin{align*}
+d{\bf{A_{angle}}} &= (\frac{d{\bf{l}}}{ds} \times \frac{d{\bf{l}}}{dt})dsdt \\
+&=
+\begin{vmatrix}
+    {\bf{\hat{x}}} &{\bf{\hat{y}}} &{\bf{\hat{z}}} \\
+    2 & 0 & 0 \\
+     0 & 2 & 2
+\end{vmatrix} dsdt \\
+&= (4 {\bf{\hat{z}}} - 4 {\bf{\hat{y}}}) dsdt
+\end{align*}
+$$
+
+$$
+\begin{align*}
+\int_A curl {\bf{H}} \cdot d{\bf{A_{angle}}} &= \int\int (-{\bf{\hat{y}}} + {\bf{\hat{z}}}) \cdot (4 {\bf{\hat{z}}} - 4 {\bf{\hat{y}}}) dsdt \\
+&= 8\int_0^1 \int_0^1 ds dt \\
+&= 8
+\end{align*}
+$$
+
+### 2.2.4
+
+$$
+d{\bf{A_{front}}} = dA_{front} {\bf{\hat{y}}}
+$$
+
+$$
+\begin{align*}
+\int_A curl {\bf{H}} \cdot d{\bf{A_{front}}} &= \int_A (-{\bf{\hat{y}}} + {\bf{\hat{z}}}) \cdot ({\bf{\hat{y}}}) dA_{front} \\
+&= -\int_A dA \\
+&= -4
+\end{align*}
+$$
+
+$$
+\begin{align*}
+\int_A curl {\bf{H}} \cdot d{\bf{A}} &= 8 - 4 = 4
+\end{align*}
+$$
+
+## 2.3
+
+## 2.4
+
+![W2_4](./img/W2_4.png)
