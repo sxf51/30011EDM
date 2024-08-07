@@ -66,7 +66,7 @@ $$
 (d)
 
 $$
-grad f = \nabla{f} = \frac{\partial{f}}{\partial{x}}{\bf{\hat{x}}} + \frac{\partial{f}}{\partial{y}}{\bf{\hat{y}}} + \frac{\partial{f}}{\partial{z}}{\bf{\hat{z}}} = \frac{2x}{x^2 + y^2 + z^2}{\bf{\hat{x}}} + \frac{2y}{x^2 + y^2 + z^2}{\bf{\hat{y}}} + \frac{2z}{x^2 + y^2 + z^2}{\bf{\hat{z}}}
+grad f = \nabla{f} = \frac{\partial{f}}{\partial{x}}{\bf{\hat{x}}} + \frac{\partial{f}}{\partial{y}}{\bf{\hat{y}}} + \frac{\partial{f}}{\partial{z}}{\bf{\hat{z}}} = \frac{-x}{x^2 + y^2 + z^2}{\bf{\hat{x}}} + \frac{-y}{x^2 + y^2 + z^2}{\bf{\hat{y}}} + \frac{-z}{x^2 + y^2 + z^2}{\bf{\hat{z}}}
 $$
 
 ## 1.4
@@ -276,10 +276,66 @@ text(1/sqrt(2), 1/sqrt(2), 0, "P2", "FontSize",24)
 
 ### 2.1.4
 
+There is no singularity here, the result is not related to the path.
+
 $$
 \begin{align*}
 V_{l_1} &= -\int_{l_1} {\bf{E}} \cdot dl_1 \\
 &= -\int_{l_1} {\bf{E}(l_1(s))} \cdot \frac{d{\bf{l_1}}}{ds}(s) ds \\
-&= 
+&= -\int_s(-\frac{s}{\sqrt{2}}, - (1 - s + \frac{s}{\sqrt{2}}))(-1 + \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})ds \\
+&= -\int_0^1 \sqrt{2} s - s - \frac{\sqrt{2}}{2} ds \\
+&= \frac{1}{2}
 \end{align*}
 $$
+
+$$
+\begin{align*}
+V_{l_2} &= -\int_{l_2} {\bf{E}} \cdot dl_2 \\
+&= -\int_{l_2} {\bf{E}(l_2(s))} \cdot \frac{d{\bf{l_2}}}{ds}(s) ds \\
+&= -\int_s(-sin(\frac{\pi s}{4}), -cos(\frac{\pi s}{4}))(-\frac{\pi}{4}sin(\frac{\pi s}{4}), \frac{\pi}{4}cos(\frac{\pi s}{4}))ds \\
+&= \int_0^1 cos^2(\frac{\pi s}{4}) - sin^2(\frac{\pi s}{4}) ds \\
+&= \frac{\pi}{4}\int_0^1 cos(\frac{\pi s}{2}) ds \\
+&= \frac{\pi}{4} \times \frac{2}{\pi}sin(\frac{\pi s}{2})|_{s=0}^{s=1} \\
+&= \frac{1}{2}
+\end{align*}
+$$
+
+- Force:
+$${\bf{F}} = q{\bf{E}}$$
+- Work:
+$$W = -\int_l {\bf{F}} dl = -q\int_l {\bf{E}} dl$$
+- Voltage
+$$V = \frac{W}{q} = -\int_l {\bf{E}} dl$$
+
+### 2.1.5
+
+Since ${\bf{E}}(x, y, z) = -y {\bf{\hat{x}}} - x {\bf{\hat{y}}}$ (shown in Fomular 8)
+
+This field is static,
+
+$$
+-\nabla{U} = E
+$$
+
+$$
+\begin{align*}
+\frac{\partial{U}}{\partial{x}} = y \\
+\frac{\partial{U}}{\partial{y}} = x
+\end{align*}
+$$
+
+Hence,
+
+$$
+U = xy + c
+$$
+
+where c is constant.
+
+${\bf{P_1}} = (1, 0), {\bf{P_2}} = (\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})$
+
+$$
+U({\bf{P_2}}) - U({\bf{P_1}}) = (1/2 + c) - (0 + c) = \frac{1}{2}
+$$
+
+## 2.2
