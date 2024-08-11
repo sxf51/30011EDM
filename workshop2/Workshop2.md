@@ -430,8 +430,153 @@ $l_1, l_2, l_3, l_4$ forms a square, anticlockwise.
 
 ### 2.3.2
 
+Given:
 
+$$
+\begin{align*}
+    {\bf{H}}(x, y, z) = -z{\bf{\hat{x}}} + x{\bf{\hat{y}}}
+\end{align*}
+$$
+
+- ${\bf{l}}_1(s) = 2s{\bf{\hat{x}}}$
+
+$$
+\begin{align*}
+    {\bf{H}}_1(x, y, z) = 2s{\bf{\hat{y}}}
+\end{align*}
+$$
+
+- ${\bf{l}}_2(s) = 2{\bf{\hat{x}}} + 2s{\bf{\hat{y}}}$
+
+$$
+\begin{align*}
+    {\bf{H}}_2(x, y, z) = 2{\bf{\hat{y}}}
+\end{align*}
+$$
+
+- ${\bf{l}}_3(s) = 2(1-s){\bf{\hat{x}}} + 2{\bf{\hat{y}}}$
+
+$$
+\begin{align*}
+    {\bf{H}}_3(x, y, z) = 2(1-s){\bf{\hat{y}}}
+\end{align*}
+$$
+
+- ${\bf{l}}_4(s) = 2(1-s){\bf{\hat{y}}}$
+
+$$
+\begin{align*}
+    {\bf{H}}_4(x, y, z) = {\bf{0}}
+\end{align*}
+$$
+
+### 2.3.3
+
+- $l_1$
+
+$$
+\begin{align*}
+    \int_{l_1}{\bf{H}} \cdot d{\bf{l_1}} &= \int_{0}^{1}{\bf{H}}_1(s) \cdot \frac{d{\bf{l_1}}(s)}{ds}ds \\
+    &= \int_{0}^{1}(0, 2s, 0) \cdot (2, 0, 0)ds \\
+    &= 0
+\end{align*}
+$$
+
+- $l_2$
+
+$$
+\begin{align*}
+    \int_{l_2}{\bf{H}} \cdot d{\bf{l_2}} &= \int_{0}^{1}{\bf{H}}_2(s) \cdot \frac{d{\bf{l_2}}(s)}{ds}ds \\
+    &= \int_{0}^{1}4ds \\
+    &= 4
+\end{align*}
+$$
+
+- $l_3$
+
+$$
+\begin{align*}
+    \int_{l_3}{\bf{H}} \cdot d{\bf{l_3}} &= \int_{0}^{1}{\bf{H}}_3(s) \cdot \frac{d{\bf{l_3}}(s)}{ds}ds \\
+    &= \int_{0}^{1}(0, 2(1-s), 0) \cdot (-2, 0, 0)ds \\
+    &= 0
+\end{align*}
+$$
+
+- $l_4$
+
+$$
+\begin{align*}
+    \int_{l_4}{\bf{H}} \cdot d{\bf{l_4}} &= \int_{0}^{1}{\bf{H}}_4(s) \cdot \frac{d{\bf{l_4}}(s)}{ds}ds \\
+    &= 0
+\end{align*}
+$$
+
+Hence,
+
+$$
+\begin{align*}
+    \oint_{l}{\bf{H}} \cdot d{\bf{l}} &= \int_{l_1}{\bf{H}} \cdot d{\bf{l_1}} + \int_{l_2}{\bf{H}} \cdot d{\bf{l_2}} + \int_{l_3}{\bf{H}} \cdot d{\bf{l_3}} + \int_{l_4}{\bf{H}} \cdot d{\bf{l_4}} \\
+    &= 0 + 4 + 0 + 0 \\
+    &= 4
+\end{align*}
+$$
+
+### 2.3.4
+
+In 2.2.4, we get
+$$
+\begin{align*}
+\int_A curl {\bf{H}} \cdot d{\bf{A}} = 4
+\end{align*}
+$$
+
+In 2.3.3,
+$$
+\begin{align*}
+    \oint_{l}{\bf{H}} \cdot d{\bf{l}} = 4
+\end{align*}
+$$
+
+It shows the Stokes' Theorem:
+$$
+\begin{align*}
+    \oint_{l}{\bf{H}} \cdot d{\bf{l}} = \int_A curl {\bf{H}} \cdot d{\bf{A}}
+\end{align*}
+$$
+
+${\bf{A}}$ is an oriented smooth open surface bounded by Jordan curve ${\bf{l}}$. Hence, Stokes’ theoremholds for the field permeating through the configuration.
 
 ## 2.4
 
-![W2_4](./img/W2_4.png)
+### 2.4.1
+
+$$
+\begin{align*}
+    Q = \iiint_{V} \rho dV &= \int_{0}^{1}\int_{0}^{1}\int_{0}^{1} \rho(x, y, z) dxdydz \\
+    &= \int_{0}^{1}\int_{0}^{1}\int_{0}^{1} (\pi z)^2 sin(\pi x) cos(\frac{\pi y}{2}) dxdydz \\
+    &= 2\pi\int_{0}^{1}\int_{0}^{1} z^2 cos(\frac{\pi y}{2}) dydz \\
+    &= 4\int_{0}^{1} z^2 sin(\frac{\pi y}{2})|_{y = 0}^{1} dz \\
+    &= \frac{4}{3} z^3 |_{z = 0}^{1} \\
+    &= \frac{4}{3} (C)
+\end{align*}
+$$
+
+### 2.4.2
+
+$$
+\begin{align*}
+    \oiint_{A} {\bf{E}}(x, y, z) d{\bf{A}} &= \oiint_{A} div{\bf{E}} dxdydz \\
+    &= \iiint_{V} \frac{\rho}{\epsilon} dxdydz \\
+    &= \frac{4}{3\epsilon} (Vm)
+\end{align*}
+$$
+
+Gauss's law shows:
+
+$$
+\begin{align*}
+    \nabla \cdot {\bf{E}} = \frac{Q}{\epsilon}
+\end{align*}
+$$
+
+Hence,  the total flux of the electric field ${\bf{E}}$ out through the surface of the volume V is $\frac{4}{3\epsilon}$ Vm.
