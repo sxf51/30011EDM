@@ -13,28 +13,19 @@ $$
 \mathbf{E} = \mathbf{E}(r, \phi, \theta) = E(r) \mathbf{\hat{r}}
 $$
 
-This means that the electric field is a function of the radial distance \(r\) and is directed along the radial unit vector \(\hat{r}\). The hint suggests considering symmetry to explain this configuration.
+Gauss’s law states that the electric flux through a closed surface is proportional to the amount of charge. Because of the symmetry of the sphere, the charge is evenly distributed on the surface of the shell. Hence, the electric field must be radial. To apply Gauss’s law effectively in this configuration, the flux is equal everywhere on the sphere.
+If the electric field had components in directions other than the radial direction, these components would cancel out when integrated over a symmetric spherical surface, leaving only the radial component. Hence, $\mathbf{E} = E(r) \mathbf{\hat{r}}$.
 
-### Solution
+Moreover, if the shell is egg-shaped, its elctric field will be like this:
 
-1. **Symmetry Considerations**:
-   - The spherical symmetry of the problem suggests that the electric field should be the same in all directions from the center. This means that the electric field cannot depend on the angular coordinates \(\phi\) and \(\theta\), as this would imply a preferred direction, which contradicts the symmetry.
-   - Since the system is spherically symmetric, the electric field must be radial. The only remaining degree of freedom is the distance from the center, so the electric field can only be a function of \(r\), the radial distance.
-
-2. **Gauss’s Law**:
-   - Gauss’s law for electricity states that the electric flux through a closed surface is proportional to the charge enclosed by that surface.
-   - To apply Gauss’s law effectively in this configuration, the electric field must be uniform over the surface of a sphere centered at the origin. This uniformity ensures that the flux can be easily calculated as the product of the electric field magnitude and the surface area of the sphere.
-   - If the electric field had components in directions other than the radial direction, these components would cancel out when integrated over a symmetric spherical surface, leaving only the radial component.
-
-3. **Conclusion**:
-   - Due to the spherical symmetry of the problem, the electric field \(\mathbf{E}\) must be radially directed and uniform with respect to the angles \(\phi\) and \(\theta\). The form \(E(r)\hat{r}\) reflects this requirement, where \(E(r)\) is a scalar function that depends only on the radial distance \(r\).
+![Q1.1](./img/1_1_1.png)
 
 ### 1.1.2
 
 $$
-\begin{align}
+\begin{align*}
    \rho_{in}(r) = (\frac{Q}{\pi a^4})r && Cm^{-3}
-\end{align}
+\end{align*}
 $$
 
 $$
@@ -107,10 +98,10 @@ $$
    \end{align*}
    $$
 
-   Solving $\oint_{\partial V} \mathbf{E} \cdot d\mathbf{A}$:
+   Gauss's law:
 
    $$
-   \oint_{\partial V} \mathbf{E} \cdot d\mathbf{A} = 4\pi r^2 \mathbf{E}(r)
+   \oint_{\partial V} \mathbf{E} \cdot d\mathbf{A} = 4\pi r^2 \mathbf{E}(r) = \frac{Q}{\epsilon}
    $$
 
    Hence, when $r \in (a, b)$:
@@ -133,14 +124,20 @@ $$
 
 ### 1.2.1
 
+![Q1](./img/1_2_1.png)
+
 The charge enclosed by that surface is zero. From Gauss'law $\oint \mathbf{E} d\mathbf{A} = 0$ this implies that the electric field inside a sphere is zero. If we add an electron inside the shell, the electrons on the surface will experience a force. This will cause them to move on the surface such that the net forcefield becomes zero again. The charge will move freely to counteract any electric field inside. Therefore, when a conductive spherical shell is in electronic equilbrium, there should be no net electric field present inside. This is because the charge within the conductor will redistribute itself so as to create opposing electric fields within the candutert to cancel out any electric field present within it.
 
 ### 1.2.2
 
+![Q1](./img/1_2_2.png)
+
 Based on the answer to 1.2.1,we knew that the value of electric field in the interval from $r \in (b, b + d)$ is zero. According to the formula of flux: $\oiint_{\mathbf{A}} \mathbf{E} d\mathbf{A}$, because of $\mathbf{E} = \mathbf{0}$ the flux $\oiint_{\mathbf{A}} \mathbf{E} d\mathbf{A} = 0$.
-$\mathbf{Q} = \mathbf{E} \cdot \phi$ because of $E = 0, \mathbf{Q} = 0$, thus the total charge contained with this test surface must be zero.
+$Q = \mathbf{E} \cdot \phi$ because of $\mathbf{E} = 0, Q = 0$, thus the total charge contained with this test surface must be zero.
 
 ### 1.2.3
+
+The spherical shell is uniform and symmetrical.
 
 ## 1.3
 
@@ -150,11 +147,170 @@ If $r \in (b, b + d)$, $Q$ will be:
 
 $$
 \begin{align*}
-   Q(r) &= \oiint_{A} \rho d\mathbf{A} \\
-   &= \int_0^a\int_0^{2\pi}\int_0^{\pi} \rho_{in}(\alpha)\alpha^2 sin\theta d\theta d\phi d\alpha \\
+   Q(r) &= \int_0^a\int_0^{2\pi}\int_0^{\pi} \rho_{in}(\alpha)\alpha^2 sin\theta d\theta d\phi d\alpha \\
    &= 2\pi \int_0^a\int_0^{\pi} (\frac{Q}{\pi a^4})\alpha^3 sin\theta d\theta d\alpha \\
    &= 4\pi (\frac{Q}{\pi a^4}) \int_0^a \alpha^3 d\alpha \\
    &= Q(\frac{a}{a})^4 \\
    &= Q & C
 \end{align*}
 $$
+
+### 1.3.2
+
+Yes.
+
+![Q1.3.2](./img/1.3.2.png)
+
+## 2.1
+
+### 2.1.1
+
+Since the direction and magnitude of the symmetric magnetic field of the cylinder, E depend solely on the radial distance r from the axis, independent of the Angle ϕ (as shown in Part 1).  As H is perpendicular to E, H has no component in the r direction. J is uniform along the z direction, H has no component in the z direction either.
+
+Using Ampere’s law:
+
+$$
+\begin{align*}
+   \oint_{l(A)} \mathbf{H} \cdot d\mathbf{l} = \iint_{A(l)} \mathbf{J} \cdot d\mathbf{A} + \iint_{A(l)} \frac{d\mathbf{D}}{dt} \cdot d\mathbf{A}
+\end{align*}
+$$
+
+The electric field does not change with time.
+
+$$
+\begin{align*}
+   \oint_{l(A)} \mathbf{H} \cdot d\mathbf{l} = \iint_{A(l)} \mathbf{J} \cdot d\mathbf{A} = I
+\end{align*}
+$$
+
+Using the right-hand rule, we can determine the direction and nature of the magnetic field generated by the current.
+
+$$
+\begin{align*}
+   \mathbf{H}(r, \phi, z) = H_{\phi} \mathbf{\hat{\phi}} && Am^{-1}
+\end{align*}
+$$
+
+### 2.1.2
+
+From Cartesian coordinates to cylindrical coordinates:
+
+$$
+\begin{align*}
+   d\mathbf{A} = rd\theta dr \mathbf{\hat{z}}
+\end{align*}
+$$
+
+Based on the definition of current:
+
+$$
+\begin{align*}
+   I_{core}(r) &= \iint_{A(l)} \mathbf{J} \cdot d\mathbf{A} \\
+   &= \int_0^{r} \int_0^{2\pi} J_{core}(\alpha) \mathbf{\hat{z}} \cdot \alpha d\theta d\alpha \mathbf{\hat{z}} \\
+   &= \int_0^{r} \frac{3I\alpha^2}{a^3} d\alpha \\
+   &= I(\frac{r}{a})^3 & A
+\end{align*}
+$$
+
+The total current is $I$:
+
+$$
+\begin{align*}
+   I = I_{core}(a) = I(\frac{a}{a})^3 = I && A
+\end{align*}
+$$
+
+### 2.1.3
+
+We've already got $\oint_{l(A)} \mathbf{H} \cdot d\mathbf{l} = \iint_{A(l)} \mathbf{J} \cdot d\mathbf{A} = I$ in 2.1.1.
+
+$r \in (0, a]$,
+
+$$
+\begin{align*}
+\iint_{A(l)} \mathbf{J} \cdot d\mathbf{A} = I(\frac{r}{a})^3 && A
+\end{align*}
+$$
+
+When $r \in (a, b]$,
+
+$$
+\begin{align*}
+   I = I_{core}(a) = I(\frac{a}{a})^3 = I && A
+\end{align*}
+$$
+
+For $\oint_{l(A)} \mathbf{H} \cdot d\mathbf{l}$, we have known that $\mathbf{H}$ is in the $\phi$ direction.
+
+$$
+\begin{align*}
+   \oint_{l(A)} \mathbf{H} \cdot d\mathbf{l} &= r H_{\phi} \int_0^{2\pi} d\phi \\
+   &= 2\pi r H_{\phi} & A
+\end{align*}
+$$
+
+Hence, when $r \in (0, a]$
+
+$$
+\begin{align*}
+   2\pi r H_{\phi} = I(\frac{r}{a})^3 \\
+   \Rightarrow H_{\phi} = I(\frac{r^2}{2\pi a^3})
+\end{align*}
+$$
+
+When $r \in (a, b]$
+
+$$
+\begin{align*}
+   2\pi r H_{\phi} = I \\
+   \Rightarrow H_{\phi} = \frac{I}{2\pi r}
+\end{align*}
+$$
+
+Hence,
+
+$$
+\mathbf{H}(r) = \frac{I}{2 \pi a}
+\begin{cases}
+   \left(\frac{r}{a}\right)^2 \hat{\phi}, & r \in [0, a], \\
+   \left(\frac{a}{r}\right) \hat{\phi}, & r \in (a, b].
+\end{cases}
+$$
+
+## 2.2
+
+### 2.2.1
+
+Based on the definition of current, when $r \in (b,(b+d)]$,
+
+$$
+\begin{align*}
+   I_{shield} &= \iint_{A(l)} \mathbf{J} \cdot d\mathbf{A} \\
+   &= \int_b^{b+d} \int_0^{2\pi} J_{shield}(\alpha) \mathbf{\hat{z}} \cdot \alpha d\theta d\alpha \mathbf{\hat{z}} \\
+   &= \frac{-I}{\pi[(b+d)^2 - b^2]} \int_b^{b+d} 2\pi \alpha d\alpha \\
+   &= \frac{-I}{\pi[(b+d)^2 - b^2]} \times \pi[(b+d)^2 - b^2] \\
+   &= -I & A
+\end{align*}
+$$
+
+### 2.2.2
+
+Ampère's circuital law shows that,
+
+$$
+\begin{align*}
+   {\displaystyle \oint _{\mathbb {C} }\mathbf {B} \cdot \mathrm {d} {\boldsymbol {\ell }}=\mu _{0}I_{\text{enc}}}
+\end{align*}
+$$
+
+When the loop contains both core and shield, $\sum I = I_{core} + I_{shield} = 0$.
+
+Hence,
+
+$$
+\begin{align*}
+   {\displaystyle \oint _{\mathbb {C} }\mathbf {B} \cdot \mathrm {d} {\boldsymbol {\ell }} = 0 }
+\end{align*}
+$$
+
+The magnetic field is zero outside the shield.

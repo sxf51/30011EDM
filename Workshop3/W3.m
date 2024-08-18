@@ -1,0 +1,45 @@
+Q_on_four_pi_eps = 1;
+ a = 1;
+ b = 2;
+ d = 1;
+ n_points = 2000;
+ coords = rand(n_points,3);
+ r = coords(:,1)*6;
+ phi = coords(:,2)*pi/2;
+ theta = coords(:,3)*pi/2;
+ E_x = zeros(n_points,1);
+ E_y = zeros(n_points,1);
+ E_z = zeros(n_points,1);
+ x = zeros(n_points,1);
+ y = zeros(n_points,1);
+ z = zeros(n_points,1);
+ for i=1:n_points
+ x_i = r(i)*sin(theta(i))*cos(phi(i));
+ y_i = r(i)*sin(theta(i))*sin(phi(i));
+ z_i = r(i)*cos(theta(i));
+ r_i = r(i);
+ x(i) = x_i;
+ y(i) = y_i;
+ z(i) = z_i;
+ E_x_LO = Q_on_four_pi_eps/a*(r_i/a)^2*x_i*(r_i<=a);
+ E_y_LO = Q_on_four_pi_eps/a*(r_i/a)^2*y_i*(r_i<=a);
+ E_z_LO = Q_on_four_pi_eps/a*(r_i/a)^2*z_i*(r_i<=a);
+ E_x_HI = Q_on_four_pi_eps/a*(a./r_i)^2*x_i;
+ E_y_HI = Q_on_four_pi_eps/a*(a./r_i)^2*y_i;
+ E_z_HI = Q_on_four_pi_eps/a*(a./r_i)^2*z_i;
+ E_x_HI = E_x_HI*(r_i>=a & r_i<=b | r_i>=(b+d));
+ E_y_HI = E_y_HI*(r_i>=a & r_i<=b | r_i>=(b+d));
+ E_z_HI = E_z_HI*(r_i>=a & r_i<=b | r_i>=(b+d));
+ E_x(i) = E_x_LO + E_x_HI;
+ E_y(i) = E_y_LO + E_y_HI;
+ E_z(i) = E_z_LO + E_z_HI;
+ end
+ 
+ figure(1);
+ quiver3(x,y,z,E_x,E_y,E_z);
+ grid on;
+ xlabel('$x$','Interpreter','latex','FontSize',20);
+ ylabel('$y$','Interpreter','latex','FontSize',20);
+ zlabel('$z$','Interpreter','latex','FontSize',20);
+ axis(3.5*[0 1 0 1 0 1]);
+ view(32,23);
