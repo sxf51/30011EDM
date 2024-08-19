@@ -122,6 +122,8 @@ $$
 
 ## 1.2
 
+
+
 ### 1.2.1
 
 ![Q1](./img/1_2_1.png)
@@ -137,7 +139,11 @@ $Q = \mathbf{E} \cdot \phi$ because of $\mathbf{E} = 0, Q = 0$, thus the total c
 
 ### 1.2.3
 
-The spherical shell is uniform and symmetrical.
+If a conductor is placed in an electric field, the free electrons inside the conductor will move (positive charge moves through the electric line, negative charge moves against), which is called '**electrostatic induction**'.
+
+In this question, negative charge moves to the inner surface ($r = b$), positive charge moves to the outer surface ($r = b + d$), until the opposite electric field strengths cancel each other out, the total electric field strength in the conductor becomes zero (a state of **equilibrium**). When $r \in (b, b+d)$, the electric field is zero. Based on Gauss' law, we know that the charge encased in the closed surface is also zero. Hence, the charge on the inner surface is $-Q$. Accordingly, $+Q$ on the outer surface.
+
+Since the spherical shell is uniform and symmetrical, charge is uniformly distributed on the surface (Or, the tip of the conductor accumulates more charge). Hence, $−Q$ must be uniformly distributed on the inner surface, $+Q$ must be uniformly distributed on the outer surface.
 
 ## 1.3
 
@@ -160,6 +166,23 @@ $$
 Yes.
 
 ![Q1.3.2](./img/1.3.2.png)
+
+1. For $r \in [0,1m]$: The electric field increases proportionally to $(r)^2$ and points radially outward. This is reflected by the denser field lines as r increases, indicating a stronger field.
+2. For $r \in [1m,2m]$: The field decreases as $(1/r)^2$ as r increases. The visualization shows this by the reduction in field line density, matching the expected behavior.
+3. For $r \in (2m, 3m)$: The electric field is zero within the conducting shell, as shown by the
+absence of field lines in this region, consistent with the equation.
+4.For $r \geq 3m$: The electric field follows a $(1/r)^2$ relationship once again. The field lines spread out as the distance from the origin increases, showing a decrease in field strength that aligns with the equation (13).
+
+```matlab
+ figure(2);
+ elecField = sqrt(E_x.^2+E_y.^2+E_z.^2);
+ radius = sqrt(x.^2+y.^2+z.^2);
+ scatter(radius, elecField);
+ xlabel('$r = \sqrt{x^2 + y^2 + z^2}$','Interpreter','latex');
+ ylabel('Electric field');
+```
+
+![Q1_3_2](./img/1_3_2.png)
 
 ## 2.1
 

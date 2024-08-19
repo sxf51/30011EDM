@@ -43,3 +43,10 @@ Q_on_four_pi_eps = 1;
  zlabel('$z$','Interpreter','latex','FontSize',20);
  axis(3.5*[0 1 0 1 0 1]);
  view(32,23);
+
+ figure(2);
+ elecField = sqrt(E_x.^2+E_y.^2+E_z.^2);
+ radius = sqrt(x.^2+y.^2+z.^2);
+ scatter(radius, elecField);
+ xlabel('$r = \sqrt{x^2 + y^2 + z^2}$','Interpreter','latex');
+ ylabel('Electric field');
