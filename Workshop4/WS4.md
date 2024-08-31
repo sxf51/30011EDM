@@ -11,6 +11,8 @@
 
 ### 2.1
 
+#### 2.1.1
+
 ![fig3](./img/Figure3.png)
 
 In figure 3,
@@ -39,7 +41,7 @@ $$
 \end{align}
 $$
 
-### 2.2
+#### 2.1.2
 
 Given
 
@@ -49,18 +51,68 @@ $$
 \end{align}
 $$
 
-Replace k with x and y:
+Replace k with x and y, the left side of the equation:
 
 $$
 \begin{align*}
     (x - s\frac{(s+x)^2+(s-x)^2+2y^2}{(s+x)^2 - (s-x)^2})^2 + y^2 &= (x - \frac{s^2+x^2+y^2}{2x})^2 + y^2\\
-    &= (\frac{x^2+y^2 - s^2}{2x})^2 + y^2
+    &= (\frac{x^2 - y^2 - s^2}{2x})^2 + y^2 \\
+    &= \frac{x^4+y^4+s^4+2x^2y^2-2x^2s^2+2y^2s^2}{4x^2}
 \end{align*}
 $$
 
+The right side of the equation:
+
 $$
 \begin{align*}
-    (\frac{2ks}{k^2 - 1})^2 &= 
+    (\frac{2ks}{k^2 - 1})^2 &= (2ks\frac{(s-x)^2 + y^2}{(s+x)^2 - (s-x)^2})^2 \\
+    &= 4k^2(\frac{(s-x)^2 + y^2}{4x})^2 \\
+    &= \frac{(x+s)^2 + y^2}{(s-x)^2 + y^2} (\frac{(s-x)^2 + y^2}{2x})^2 \\
+    &= \frac{[(s+x)^2 + y^2][(s-x)^2 + y^2]}{4x^2} \\
+    &= \frac{[(s+x)^2(s-x)^2 + y^2(s-x)^2 + y^2(s+x)^2 + y^4]}{4x^2} \\
+    &= \frac{x^4+y^4+s^4+2x^2y^2-2x^2s^2+2y^2s^2}{4x^2}
+\end{align*}
+$$
+
+Hence, the equation holds.
+
+#### 2.1.3
+
+The coordinates of the center of the circle are:
+
+$$
+\begin{align}
+    (s\frac{k^2+1}{k^2-1}, 0)
+\end{align}
+$$
+
+Its radius is:
+
+$$
+\begin{align}
+    R = \frac{2ks}{k^2-1}
+\end{align}
+$$
+
+#### 2.1.4
+
+Based on figure 3,
+
+$$
+\begin{align}
+    a = R = \frac{2ks}{k^2-1} \\
+    h = s\frac{k^2+1}{k^2-1}
+\end{align}
+$$
+
+#### 2.1.5
+
+$$
+\begin{align*}
+    \frac{h}{a} &= \frac{k^2 + 1}{2k} \\
+    0 &= k^2 - 2(\frac{h}{a})k + 1 \\
+    [k - (\frac{h}{a})]^2 &= (\frac{h}{a})^2 - 1 \\
+    \Rightarrow k_{1,2} &= \frac{h}{a} \pm \sqrt{(\frac{h}{a})^2 - 1}
 \end{align*}
 $$
 
@@ -85,3 +137,13 @@ Signal distortion is a significant issue in this network interconnection. The si
 ### 3.2
 
 ![LTspice](./img/Part3.jpg)
+
+### 3.3
+
+![DS1Z](./img/DS1Z_QuickPrint1.png)
+
+White,Green $\Delta t = 484ns$
+
+Yellow line: $t_{rise} = 400ns$, first peak: $6.160V$, $t_{peaktopeak} = 1.28\mu s$
+
+Yellow line: $t_{rise} = 32ns$, first peak: $6.760V$
